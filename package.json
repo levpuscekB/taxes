@@ -1,0 +1,15 @@
+{
+  "name": "slovenia-tax-tool",
+  "version": "1.0.0",
+  "description": "Visual breakdown of Slovenian salary taxes and contributions",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["slovenia", "tax", "salary", "contributions", "tool"],
+  "author": "levpuscekB",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
