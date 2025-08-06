@@ -1,0 +1,144 @@
+/*
+ * Styles for the Slovenian Salary Tax Distribution tool.
+ *
+ * This stylesheet defines a simple, responsive layout with
+ * clearly separated sections for input and results.  Colours are
+ * chosen for readability against a light background and the
+ * typography aims for clarity without distracting from the data.
+ */
+
+/* Root variables to centralise colour and spacing values. */
+:root {
+  --primary-colour: #004d80;    /* deep blue for headings */
+  --accent-colour: #007acc;     /* lighter blue for buttons */
+  --background-colour: #f5f8fc; /* very light grey-blue background */
+  --card-background: #ffffff;   /* white cards */
+  --border-radius: 6px;
+  --text-colour: #333333;
+  --font-size-base: 16px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  font-size: var(--font-size-base);
+  color: var(--text-colour);
+  background-color: var(--background-colour);
+  height: 100%;
+}
+
+main.wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: var(--primary-colour);
+}
+
+p.intro {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+/* Card containing the form. */
+.card {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+.form-group input {
+  padding: 0.5rem;
+  border: 1px solid #cccccc;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+}
+
+button[type="submit"] {
+  display: inline-block;
+  background-color: var(--accent-colour);
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #005fa3;
+}
+
+/* Results section styles. */
+.results {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.results.hidden {
+  display: none;
+}
+
+.results h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--primary-colour);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+table thead {
+  background-color: var(--primary-colour);
+  color: #ffffff;
+}
+
+table th, table td {
+  padding: 0.6rem 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f0f5fa;
+}
+
+/* Chart canvas sizing.
+ * Set an explicit height so the chart does not grow indefinitely.
+ */
+#chartCanvas {
+  width: 100%;
+  height: 320px;
+  max-height: 400px;
+}

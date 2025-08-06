@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slovenian Salary Tax Distribution Tool</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Load Chart.js from CDN for visualising results -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  </head>
+  <body>
+    <main class="wrapper">
+      <h1>Slovenian Salary Tax Distribution</h1>
+      <p class="intro">
+        Enter your monthly gross salary, net salary and optionally the total
+        employer cost.  The tool estimates how much of your pay goes toward
+        pensions, healthcare, unemployment, education, defence, police and
+        other areas of public spending in Slovenia (based on 2025 data).
+      </p>
+      <form id="salaryForm" class="card">
+        <div class="form-group">
+          <label for="grossSalary">Gross salary (€)</label>
+          <input
+            type="number"
+            id="grossSalary"
+            name="grossSalary"
+            step="0.01"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="netSalary">Net salary (€)</label>
+          <input
+            type="number"
+            id="netSalary"
+            name="netSalary"
+            step="0.01"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="employerCost">Cost to employer (€)</label>
+          <input
+            type="number"
+            id="employerCost"
+            name="employerCost"
+            step="0.01"
+            placeholder="Optional"
+          />
+        </div>
+        <button type="submit">Calculate distribution</button>
+      </form>
+      <section id="resultsSection" class="results hidden">
+        <h2>Results</h2>
+        <div class="table-wrapper">
+          <table id="resultsTable">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Amount (€)</th>
+              </tr>
+            </thead>
+            <tbody id="breakdownTable"></tbody>
+          </table>
+        </div>
+        <canvas id="chartCanvas"></canvas>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
